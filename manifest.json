@@ -1,8 +1,9 @@
 {
     "name": "Custom Link Page",
     "short_name": "LinkPage",
-    "description": "Offline-enabled custom link page",
-    "start_url": "/",
+    "description": "Offline-enabled custom link page with Google Sheets",
+    "start_url": "/experiment/",
+    "scope": "/experiment/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2196F3",
