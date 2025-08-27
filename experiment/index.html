@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Link Page</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <meta name="theme-color" content="#2196F3">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .link-card { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .offline-indicator { color: red; font-weight: bold; }
+        .online-indicator { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>My Custom Link Page</h1>
+    <div id="status" class="online-indicator">Online</div>
+    <div id="content"></div>
+    
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>
